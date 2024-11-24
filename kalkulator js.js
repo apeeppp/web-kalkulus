@@ -45,6 +45,11 @@ function clearFunction() {
     document.getElementById('outputLimit').innerText = ''; // Menambahkan ini untuk menghapus output limit
 }
 
+function backspaceFunction() {
+    const functionInput = document.getElementById('function');
+    functionInput.value = functionInput.value.slice(0, -1);
+}
+
 
 function appendToLimit(value) {
     document.getElementById('limit').value += value;
