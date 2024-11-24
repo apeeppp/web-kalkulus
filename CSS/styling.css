@@ -12,6 +12,7 @@ body {
     display: flex;
     /* Menambahkan display flex */
     flex-direction: column;
+    animation: fadeInBg 2s ease-in-out;
 }
 
 header {
@@ -19,6 +20,7 @@ header {
     color: white;
     padding: 20px 0;
     text-align: center;
+    animation: slideDown 1s ease-in-out;
 }
 
 h1 {
@@ -33,6 +35,7 @@ nav ul {
     justify-content: center;
     padding: 0;
     margin: 20px 0;
+    animation: fadeIn 2s ease-in-out;
 }
 
 nav ul li {
@@ -55,6 +58,7 @@ nav ul li a:hover {
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .member {
@@ -70,6 +74,7 @@ nav ul li a:hover {
     /* Menetapkan tinggi yang konsisten */
     width: 200px;
     /* Menetapkan lebar yang konsisten */
+    animation: zoomIn 1.5s ease-in-out;
 }
 
 .member img {
@@ -92,6 +97,32 @@ nav ul li a:hover {
     /* Mengubah warna latar belakang saat hover */
 }
 
+/* Penataan untuk link Instagram */
+a {
+    display: inline-block; /* Agar gambar berfungsi seperti tombol */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+}
+
+/* Penataan gambar Instagram */
+a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50%; /* Menjadikan gambar berbentuk bulat */
+}
+
+/* Efek saat hover */
+a:hover img {
+    transform: scale(1.2); /* Membesarkan gambar saat kursor menyentuh */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+}
+
+/* Efek saat link Instagram di-hover */
+a:hover {
+    transform: scale(1.05); /* Sedikit memperbesar link secara keseluruhan */
+}
+
+
 footer {
     text-align: center;
     padding: 10px 0;
@@ -101,13 +132,56 @@ footer {
     bottom: 0;
     width: 100%;
     margin-top: 20px;
+    animation: slideUp 1s ease-in-out;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
     }
 }
