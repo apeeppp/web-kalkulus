@@ -1,3 +1,4 @@
+/* Menggunakan gaya dasar sebelumnya */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -5,6 +6,7 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     background-image: url(bg\ kalkulator.jpg);
+    animation: fadeInBg 2s ease-in-out;
 }
 
 section {
@@ -13,6 +15,7 @@ section {
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     background-color: #ffffff;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .image-center {
@@ -23,18 +26,13 @@ section {
 
 .image-center img {
     max-width: 100%;
-    /* Membuat gambar responsif */
     height: auto;
-    /* Menjaga rasio aspek */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    /* Tambahkan efek bayangan */
     border-radius: 8px;
-    /* Opsional: Sudut melengkung */
+    animation: zoomIn 1.5s ease;
 }
 
-
-/* Mengubah warna latar belakang setiap bab secara berurutan */
-
+/* Mengubah warna latar belakang setiap bab */
 #hero-text {
     background-color: #e0f7fa;
 }
@@ -59,18 +57,15 @@ section {
     background-color: #ffffff;
 }
 
-
 /* Memberikan margin dan padding pada judul setiap bab */
-
 section h2 {
     font-size: 1.8rem;
     margin-top: 0;
     color: #333;
+    animation: slideIn 1.5s ease-in-out;
 }
 
-
 /* Menambahkan garis horizontal di bawah judul bab */
-
 section h2::after {
     content: "";
     display: block;
@@ -79,31 +74,25 @@ section h2::after {
     background-color: #2d87f0;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
+    animation: scaleIn 1s ease-in-out;
 }
 
-
 /* Memberi jarak antar paragraf dalam bab */
-
 section p {
     margin-bottom: 2rem;
 }
 
+/* Header dengan animasi */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 10px 0;
-}
-
-header {
     background-color: #2d87f0;
-    position: sticky;
-    top: 0px;
     color: #fff;
     padding: 1rem;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: slideDown 1s ease-in-out;
 }
 
 header h1 {
@@ -125,6 +114,7 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -147,10 +137,74 @@ main p {
     text-align: center;
 }
 
+/* Footer tetap sederhana */
 footer {
     text-align: center;
     padding: 1rem;
     background-color: #2d87f0;
     color: #fff;
     font-size: 0.9rem;
+}
+
+/* Animasi */
+@keyframes fadeInBg {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
