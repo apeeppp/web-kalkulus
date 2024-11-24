@@ -24,11 +24,13 @@ header {
     width: 100%;
     z-index: 200;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
 }
 
 h1 {
     font-size: 1.8rem;
     margin-bottom: 0px;
+    animation: slideInDown 1s ease-out;
 }
 
 nav ul {
@@ -37,6 +39,7 @@ nav ul {
     display: flex;
     justify-content: center;
     margin: 20px 0;
+    animation: fadeIn 1.5s ease-out;
 }
 
 nav ul li {
@@ -53,11 +56,14 @@ nav ul li a {
 nav ul li a:hover {
     color: #ffcc00;
     /* Warna saat hover */
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 
 main {
     padding: 15px 20px 20px;
     /* Tambahkan padding atas untuk menghindari header tetap */
+    animation: fadeIn 1.5s ease-in;
 }
 
 section {
@@ -68,6 +74,7 @@ section {
     margin: 20px auto;
     max-width: 800px;
     /* Maksimal lebar konten */
+    animation: fadeInUp 1s ease-out;
 }
 
 h2 {
@@ -75,12 +82,14 @@ h2 {
     margin-bottom: 20px;
     color: #007bff;
     /* Warna biru untuk judul */
+    animation: fadeInLeft 1s ease-in;
 }
 
 p {
     font-size: 1.1em;
     line-height: 1.6;
     margin-bottom: 15px;
+    animation: fadeInRight 1.5s ease-in;
 }
 
 strong {
@@ -88,12 +97,13 @@ strong {
     /* Warna biru untuk teks tebal */
 }
 
-s s footer {
+footer {
     text-align: center;
     padding: 1rem;
     background-color: #2d87f0;
     color: #fff;
     font-size: 0.9rem;
+    animation: fadeIn 1s ease-out;
 }
 
 @media (max-width: 768px) {
@@ -108,5 +118,59 @@ s s footer {
     }
     section {
         padding: 15px;
+    }
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
